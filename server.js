@@ -1,21 +1,27 @@
 // an api to manage channels
 const express = require('express');
 
-// import router
-// const channelsRouter = require('./channels/channels-router.js');
+const Posts = require('./data/db.js');
 
 const server = express();
 
 server.use(express.json());
 
+
+// home route
 server.get('/', (req, res) => {
-  res.status(200).json({ message: 'Welcome to webapi-ii-challenge' });
-});
+    res.status(200).json({ message: 'Welcome to webapi-ii-challenge' });
+  });
+
+
+  
+// import router
+const postsRouter = require('./posts/posts-router.js');
+
 
 // router base routes
-// server.use('/api/channels', channelsRouter);
+server.use('/api/posts', postsRouter);
 
-// list channels
 
 
 
