@@ -1,7 +1,7 @@
 // an api to manage channels
 const express = require('express');
 
-const Posts = require('./data/db.js');
+
 
 const server = express();
 
@@ -14,7 +14,7 @@ server.get('/', (req, res) => {
   });
 
 
-  
+
 // import router
 const postsRouter = require('./posts/posts-router.js');
 
@@ -25,4 +25,4 @@ server.use('/api/posts', postsRouter);
 
 
 
-server.listen(5000, () => console.log('\n***API up and running***\n'));
+server.listen(5000, () => console.log('\n***API up and running on PORT 5000***\n'));
